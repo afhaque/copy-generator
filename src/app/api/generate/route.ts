@@ -35,7 +35,7 @@ export async function POST(request: Request) {
           }
           controller.enqueue(encoder.encode("data: [DONE]\n\n"));
           controller.close();
-        } catch (err) {
+        } catch {
           controller.enqueue(
             encoder.encode(
               `data: ${JSON.stringify({ error: "Generation failed" })}\n\n`
